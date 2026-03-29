@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Poems — This Season Unchanging</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --ink: #2a1f14; --ink-light: #5c4a35; --ink-faint: #9c8870;
+      --parchment: #faf6ef; --parchment-dark: #f0e9db;
+      --accent: #8b3a2a; --rule: #d4c4b0;
+      --serif: 'Playfair Display', Georgia, serif;
+      --body: 'EB Garamond', Georgia, serif;
+    }
+    body { background: var(--parchment); color: var(--ink); font-family: var(--body); font-size: 18px; line-height: 1.75; }
+    nav { position: sticky; top: 0; z-index: 100; background: var(--parchment); border-bottom: 1px solid var(--rule); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 64px; }
+    .nav-logo { font-family: var(--serif); font-size: 1.1rem; font-style: italic; color: var(--ink); text-decoration: none; }
+    .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+    .nav-links a { font-size: 0.85rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-light); text-decoration: none; transition: color 0.2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--accent); }
+
+    .page-header { max-width: 860px; margin: 0 auto; padding: 5rem 2rem 3rem; border-bottom: 1px solid var(--rule); }
+    .page-eyebrow { font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 1rem; }
+    .page-header h1 { font-family: var(--serif); font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 400; color: var(--ink); margin-bottom: 1rem; }
+    .page-header p { font-size: 1rem; color: var(--ink-light); max-width: 480px; line-height: 1.8; }
+
+    .content { max-width: 640px; margin: 0 auto; padding: 4rem 2rem; }
+
+    .poem { padding-bottom: 5rem; margin-bottom: 5rem; border-bottom: 1px solid var(--rule); }
+    .poem:last-child { border-bottom: none; }
+
+    .poem-meta { font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 1.5rem; display: flex; gap: 1.5rem; }
+    .poem-meta span::before { content: '· '; }
+    .poem-meta span:first-child::before { content: ''; }
+
+    .poem h2 { font-family: var(--serif); font-size: clamp(1.4rem, 3vw, 2rem); font-weight: 400; line-height: 1.25; color: var(--ink); margin-bottom: 2rem; }
+    .poem h2 em { font-style: italic; color: var(--accent); }
+
+    .poem-text {
+      font-family: var(--body);
+      font-size: 1.1rem;
+      line-height: 1.9;
+      color: var(--ink);
+      white-space: pre-line;
+    }
+
+    .poem-text em { font-style: italic; color: var(--ink-light); }
+
+    .stanza { margin-bottom: 1.5rem; }
+
+    .poem-end { text-align: center; color: var(--rule); font-size: 1.2rem; letter-spacing: 0.5em; margin-top: 2.5rem; }
+
+    footer { border-top: 1px solid var(--rule); padding: 3rem 2rem; text-align: center; margin-top: 2rem; }
+    .footer-name { font-family: var(--serif); font-style: italic; font-size: 1.4rem; color: var(--ink); margin-bottom: 0.5rem; }
+    .footer-tagline { font-size: 0.85rem; color: var(--ink-faint); }
+
+    @media (max-width: 640px) {
+      nav { padding: 0 1rem; } .nav-links { gap: 1.5rem; }
+      .page-header, .content { padding-left: 1.5rem; padding-right: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-logo">This Season Unchanging</a>
+    <ul class="nav-links">
+      <li><a href="stories.html">Stories</a></li>
+      <li><a href="essays.html">Essays</a></li>
+      <li><a href="poems.html" class="active">Poems</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+  </nav>
+
+  <header class="page-header">
+    <p class="page-eyebrow">Poems</p>
+    <h1>Small rooms<br>of attention</h1>
+    <p>Poems are where I put the things that won't fit elsewhere — too small for a story, too strange for an essay.</p>
+  </header>
+
+  <main class="content">
+
+    <article class="poem" id="blood-flows">
+      <div class="poem-meta">
+        <span>Poem</span>
+        <span>D.R. Smith</span>
+      </div>
+      <h2>Blood Flows</h2>
+      <div class="poem-text">
+        <div class="stanza">A scent that pulses and possesses the senses, that rises in confrontation then backs down again, that moves like the tide, that drowns then leaves dry.</div>
+
+        <div class="stanza">The scent of the meal, prepared by unseen hands, inhabits the interior.
+(Mouths open and moisten in expectation, then close to dam a flood of sickness.)</div>
+
+        <div class="stanza">You understand your body, and we understand that our teeth are weak and can not sever the stitch-like sinews to taste what lies inside.
+Jaws break in an attempt to devour what they must.</div>
+
+        <div class="stanza">(The rabid and starved dog madness is fatal, though shreddingly predictable. What we do is what we do, because it is what we do.)</div>
+
+        <div class="stanza">And what we do is constantly cut these hours, trim these hours, these hours that cling like fat to the meat of the moment. Spices and side dishes distract but can not satiate.</div>
+
+        <div class="stanza">If blood flows, blood flows.
+It's real, nothing more.</div>
+      </div>
+      <p class="poem-end">· · ·</p>
+    </article>
+
+    <article class="poem" id="modus-vivendi">
+      <div class="poem-meta">
+        <span>Poem</span>
+        <span>D.R. Smith</span>
+      </div>
+      <h2>Modus Vivendi</h2>
+      <div class="poem-text">
+        <div class="stanza">Know me as the Persephone who is at ease among the dead:
+seed-hungry and greedy, not wanting to ascend.
+Hateful of Hades for not giving me more.
+I deserve control.</div>
+
+        <div class="stanza">Know also that I'm not happy this way
+— bone throne majesty in a kingdom of the moribund,
+playing master and jester, it doesn't get me anywhere.</div>
+
+        <div class="stanza">Still, I can not care about a mother's tears
+and the world that suffers for them.
+And the world that suffers should suffer more
+for making a shade of me,
+for being ashamed and not afraid of me,
+for allowing me to adapt to this element.
+I can no longer breathe your air
+and you would drown in my waters</div>
+
+        <div class="stanza">so I cultivate the waste,
+coax the blood and the scar to full bloom
+and make them mine.
+Comforting as pets, lasting as death, they're mine.
+They're all I have besides the lies
+that I must work my tongue like a ladle
+to stir to perfection.</div>
+
+        <div class="stanza">It's hard, you know, and tiring
+trying always to be believed, not understood.
+It's almost a profession in this season unchanging.</div>
+      </div>
+      <p class="poem-end">· · ·</p>
+    </article>
+
+    <article class="poem" id="exposure">
+      <div class="poem-meta">
+        <span>Poem</span>
+        <span>D.R. Smith</span>
+      </div>
+      <h2>Exposure</h2>
+      <div class="poem-text">
+        <div class="stanza">You ice and crack my body, a winter wind.
+Never have I been so proud to be broken.</div>
+
+        <div class="stanza">You taught me the joy of being taken without payment:
+the art of debasement.
+Attachments are easy, I don't ask for them.</div>
+
+        <div class="stanza">You've shown me how disposable,
+how truly throw-away I am.
+When you do away with love,
+when you amputate the pride,
+the rest is bliss.</div>
+
+        <div class="stanza">I learned not to ask for a leash
+or a place at the foot of your bed
+— See how well trained I am!</div>
+
+        <div class="stanza">I know now that this is the death
+I was born for.
+My hands are yours for the chaining.
+My body, for whatever you please.</div>
+      </div>
+      <p class="poem-end">· · ·</p>
+    </article>
+
+    <article class="poem" id="inside">
+      <div class="poem-meta">
+        <span>Poem</span>
+        <span>D.R. Smith</span>
+      </div>
+      <h2>Inside</h2>
+      <div class="poem-text">
+        <div class="stanza">A hell of cells a cell of cells,
+bones, they hold like iron bars.</div>
+
+        <div class="stanza">Skin hangs on me like a suit:
+seemingly seamless but easily torn
+— moth-eaten, wrinkled with time and with wear.
+Eyes and hair and lips decorate and distract
+like costume jewelry.</div>
+
+        <div class="stanza">My pale, frail sarcophagus
+pretends to bear a likeness to its contents,
+it suggests: a perfect fit.
+There's no rising out of it.</div>
+
+        <div class="stanza">This weighty thing
+can never belong to anyone else.
+It has knotted its veins and needs
+with whatever strings hung free.</div>
+
+        <div class="stanza">Not so much Siamese twins,
+as two wires fused,
+two photographs superimposed.
+The result is something new but not true,
+something wholly mine and assigned.</div>
+      </div>
+      <p class="poem-end">· · ·</p>
+    </article>
+
+    <article class="poem" id="committed">
+      <div class="poem-meta">
+        <span>Poem</span>
+        <span>D.R. Smith</span>
+      </div>
+      <h2>Committed</h2>
+      <div class="poem-text">
+        <div class="stanza"><em>I.</em>
+The umbilical cord (the womb's leash)
+can not be brought to bedroom sheets
+without first stretching and snapping.
+And love with all its trappings
+is siren appealing.</div>
+
+        <div class="stanza"><em>II.</em>
+The gorgeous flesh, the breath and sex;
+the comfort of your sheltering chest.
+From mother to lover, sweet breast how you change!</div>
+
+        <div class="stanza"><em>III.</em>
+Jealous as a man;
+and unwilling to give up any stock in me.
+Convinced that a devil has come to claim me, you guard me;
+I do not want it.</div>
+
+        <div class="stanza"><em>IV.</em>
+Kiss me to keep me from ever leaving.
+Hold me to hide me from the cruel tyrant stalking.</div>
+
+        <div class="stanza"><em>V.</em>
+From whence I came
+I wish to go back again.
+I can not swallow
+the bitter taste of your war.
+A dear possession am I
+to you, to her my own
+I am no more.</div>
+      </div>
+      <p class="poem-end">· · ·</p>
+    </article>
+
+    <article class="poem" id="drink-in-the-sight">
+      <div class="poem-meta">
+        <span>Poem</span>
+        <span>D.R. Smith</span>
+      </div>
+      <h2>Drink in the Sight</h2>
+      <div class="poem-text">
+        <div class="stanza">The leg-less limb-less dancer arms are lacking.
+A torso with nowhere to go.</div>
+
+        <div class="stanza">Watch her. View her.
+Deny your hypnotized eyes, you will not.
+You will watch.
+Such is the way of our race.</div>
+
+        <div class="stanza">Arenas and stadiums breaking the body
+to the beat of the crowd.
+They drink in the sight like wine.</div>
+
+        <div class="stanza">We're out of our minds.</div>
+      </div>
+      <p class="poem-end">· · ·</p>
+    </article>
+
+
+  </main>
+
+  <footer>
+    <p class="footer-name">This Season Unchanging</p>
+    <p class="footer-tagline">The writing of David Robert Smith &nbsp;·&nbsp; 1975–2025</p>
+    <p class="footer-tagline" style="margin-top: 0.4rem;">&copy; 2026 daveswriting.com &nbsp;·&nbsp; All rights reserved</p>
+  </footer>
+
+</body>
+</html>

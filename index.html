@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>This Season Unchanging</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --ink: #2a1f14;
+      --ink-light: #5c4a35;
+      --ink-faint: #9c8870;
+      --parchment: #faf6ef;
+      --parchment-dark: #f0e9db;
+      --parchment-mid: #e8ddd0;
+      --accent: #8b3a2a;
+      --accent-light: #c5614d;
+      --rule: #d4c4b0;
+      --serif: 'Playfair Display', Georgia, serif;
+      --body: 'EB Garamond', Georgia, serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--parchment);
+      color: var(--ink);
+      font-family: var(--body);
+      font-size: 18px;
+      line-height: 1.75;
+      min-height: 100vh;
+    }
+
+    /* Texture overlay */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* NAV */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--parchment);
+      border-bottom: 1px solid var(--rule);
+      padding: 0 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+    }
+
+    .nav-logo {
+      font-family: var(--serif);
+      font-size: 1.1rem;
+      font-style: italic;
+      color: var(--ink);
+      text-decoration: none;
+      letter-spacing: 0.01em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-family: var(--body);
+      font-size: 0.85rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--ink-light);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover, .nav-links a.active { color: var(--accent); }
+
+    /* HERO */
+    .hero {
+      position: relative;
+      z-index: 1;
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 7rem 2rem 5rem;
+      text-align: center;
+    }
+
+    .hero-eyebrow {
+      font-family: var(--body);
+      font-size: 0.8rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--ink-faint);
+      margin-bottom: 1.5rem;
+    }
+
+    .hero h1 {
+      font-family: var(--serif);
+      font-size: clamp(2.8rem, 6vw, 4.8rem);
+      font-weight: 400;
+      line-height: 1.15;
+      color: var(--ink);
+      margin-bottom: 1.5rem;
+    }
+
+    .hero h1 em {
+      font-style: italic;
+      color: var(--accent);
+    }
+
+    .hero-desc {
+      font-size: 1.1rem;
+      color: var(--ink-light);
+      max-width: 520px;
+      margin: 0 auto 2.5rem;
+      line-height: 1.8;
+    }
+
+    .hero-rule {
+      width: 60px;
+      height: 1px;
+      background: var(--rule);
+      margin: 0 auto;
+    }
+
+    /* GENRE SECTION */
+    .section {
+      position: relative;
+      z-index: 1;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 4rem 2rem;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      margin-bottom: 3rem;
+    }
+
+    .section-label {
+      font-family: var(--body);
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--ink-faint);
+      white-space: nowrap;
+    }
+
+    .section-rule {
+      flex: 1;
+      height: 1px;
+      background: var(--rule);
+    }
+
+    .section-link {
+      font-family: var(--body);
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      text-decoration: none;
+      white-space: nowrap;
+      transition: opacity 0.2s;
+    }
+
+    .section-link:hover { opacity: 0.7; }
+
+    /* CARDS */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+      gap: 2rem;
+    }
+
+    .card {
+      background: var(--parchment);
+      border: 1px solid var(--rule);
+      padding: 2rem 1.75rem;
+      text-decoration: none;
+      color: inherit;
+      display: block;
+      position: relative;
+      transition: border-color 0.25s, transform 0.25s;
+      overflow: hidden;
+    }
+
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 3px;
+      height: 100%;
+      background: var(--accent);
+      transform: scaleY(0);
+      transition: transform 0.25s;
+      transform-origin: bottom;
+    }
+
+    .card:hover {
+      border-color: var(--parchment-mid);
+      transform: translateY(-3px);
+    }
+
+    .card:hover::before { transform: scaleY(1); }
+
+    .card-genre {
+      font-family: var(--body);
+      font-size: 0.7rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--ink-faint);
+      margin-bottom: 0.75rem;
+    }
+
+    .card h3 {
+      font-family: var(--serif);
+      font-size: 1.35rem;
+      font-weight: 400;
+      line-height: 1.3;
+      margin-bottom: 0.75rem;
+      color: var(--ink);
+    }
+
+    .card-excerpt {
+      font-size: 0.95rem;
+      color: var(--ink-light);
+      line-height: 1.7;
+      margin-bottom: 1.25rem;
+    }
+
+    .card-meta {
+      font-size: 0.8rem;
+      color: var(--ink-faint);
+      letter-spacing: 0.05em;
+    }
+
+    /* FEATURED PIECE */
+    .featured {
+      background: var(--parchment-dark);
+      border: 1px solid var(--rule);
+      padding: 3.5rem;
+      margin-bottom: 4rem;
+      position: relative;
+      z-index: 1;
+      max-width: 1100px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .featured-label {
+      font-family: var(--body);
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1.5rem;
+    }
+
+    .featured h2 {
+      font-family: var(--serif);
+      font-size: clamp(1.6rem, 3vw, 2.4rem);
+      font-weight: 400;
+      font-style: italic;
+      color: var(--ink);
+      margin-bottom: 1.5rem;
+      max-width: 600px;
+    }
+
+    .featured-text {
+      font-size: 1.05rem;
+      color: var(--ink-light);
+      max-width: 640px;
+      line-height: 1.85;
+      margin-bottom: 2rem;
+    }
+
+    .btn {
+      display: inline-block;
+      font-family: var(--body);
+      font-size: 0.8rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px solid var(--accent);
+      padding-bottom: 2px;
+      transition: opacity 0.2s;
+    }
+
+    .btn:hover { opacity: 0.6; }
+
+    .featured-ornament {
+      position: absolute;
+      top: 2rem;
+      right: 2.5rem;
+      font-family: var(--serif);
+      font-size: 8rem;
+      color: var(--parchment-mid);
+      line-height: 1;
+      user-select: none;
+      pointer-events: none;
+    }
+
+    /* DIVIDER */
+    .ornamental-divider {
+      text-align: center;
+      color: var(--rule);
+      font-size: 1.2rem;
+      margin: 1rem 0;
+      letter-spacing: 0.5em;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* FOOTER */
+    footer {
+      position: relative;
+      z-index: 1;
+      border-top: 1px solid var(--rule);
+      padding: 3rem 2rem;
+      text-align: center;
+      margin-top: 4rem;
+    }
+
+    .footer-name {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 1.4rem;
+      color: var(--ink);
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-tagline {
+      font-size: 0.85rem;
+      color: var(--ink-faint);
+      letter-spacing: 0.05em;
+    }
+
+    /* MOBILE */
+    @media (max-width: 640px) {
+      nav { padding: 0 1rem; }
+      .nav-links { gap: 1.5rem; }
+      .hero { padding: 4rem 1.5rem 3rem; }
+      .section { padding: 3rem 1.5rem; }
+      .featured { padding: 2rem 1.5rem; margin-left: 1.5rem; margin-right: 1.5rem; }
+      .featured-ornament { display: none; }
+      .cards { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-logo">This Season Unchanging</a>
+    <ul class="nav-links">
+      <li><a href="stories.html">Stories</a></li>
+      <li><a href="essays.html">Essays</a></li>
+      <li><a href="poems.html">Poems</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+  </nav>
+
+  <header class="hero">
+    <p class="hero-eyebrow">The writing of David Robert Smith</p>
+    <h1>This Season <em>Unchanging</em></h1>
+    <p class="hero-desc">The stories, essays, and poems of David Robert Smith — written with a spirit too large for the world that contained it.</p>
+    <div class="hero-rule"></div>
+  </header>
+
+  <!-- FEATURED -->
+  <div class="featured" style="margin-bottom: 0; margin-top: 0;">
+    <p class="featured-label">Featured piece</p>
+    <h2>Rise</h2>
+    <p class="featured-text">Awake: sickly conscious, shaking with caffeine, feeling that he would never sleep again. He searched for something to do: a book to read, a movie to watch, a person to talk to, but nothing, nothing, nothing but the pulse of a vein in his left eye throbbing in time with the digital clock, the red electric madman screaming "3 A.M.! 3 A.M.!"</p>
+    <a href="stories.html#rise" class="btn">Read the story →</a>
+    <span class="featured-ornament">&ldquo;</span>
+  </div>
+
+  <div class="ornamental-divider">· · · ·</div>
+
+  <!-- SHORT STORIES -->
+  <section class="section">
+    <div class="section-header">
+      <span class="section-label">Short Stories</span>
+      <div class="section-rule"></div>
+      <a href="stories.html" class="section-link">All stories →</a>
+    </div>
+
+    <div class="cards">
+      <a class="card" href="stories.html#rise">
+        <p class="card-genre">Short Story</p>
+        <h3>Rise</h3>
+        <p class="card-excerpt">Awake at 3 A.M., shaking with caffeine, a young man searches for an escape from his own restless flesh — and finds it in the cold open air.</p>
+        <p class="card-meta">By David Robert Smith</p>
+      </a>
+      <a class="card" href="stories.html#what-is-known">
+        <p class="card-genre">Short Story</p>
+        <h3>What is Known</h3>
+        <p class="card-excerpt">A writer is hunted through the halls of Salem High School by a torch-wielding mob — for the crime of taking his own work seriously.</p>
+        <p class="card-meta">By David Robert Smith</p>
+      </a>
+    </div>
+  </section>
+
+  <!-- ESSAYS -->
+  <section class="section" style="padding-top: 0;">
+    <div class="section-header">
+      <span class="section-label">Essays</span>
+      <div class="section-rule"></div>
+      <a href="essays.html" class="section-link">All essays →</a>
+    </div>
+
+    <div class="cards">
+      <a class="card" href="essays.html#chauvinism">
+        <p class="card-genre">Essay</p>
+        <h3>Chauvinism in Defense and Destruction</h3>
+        <p class="card-excerpt">On women in combat, the possessiveness of war, and why equality means sharing every burden — not just the comfortable ones.</p>
+        <p class="card-meta">David Smith</p>
+      </a>
+    </div>
+  </section>
+
+  <!-- POEMS -->
+  <section class="section" style="padding-top: 0;">
+    <div class="section-header">
+      <span class="section-label">Poems</span>
+      <div class="section-rule"></div>
+      <a href="poems.html" class="section-link">All poems →</a>
+    </div>
+
+    <div class="cards">
+      <a class="card" href="poems.html#blood-flows">
+        <p class="card-genre">Poem</p>
+        <h3>Blood Flows</h3>
+        <p class="card-excerpt">A scent that pulses and possesses the senses, that rises in confrontation then backs down again, that moves like the tide, that drowns then leaves dry.</p>
+        <p class="card-meta">D.R. Smith</p>
+      </a>
+      <a class="card" href="poems.html#modus-vivendi">
+        <p class="card-genre">Poem</p>
+        <h3>Modus Vivendi</h3>
+        <p class="card-excerpt">Know me as the Persephone who is at ease among the dead: seed-hungry and greedy, not wanting to ascend.</p>
+        <p class="card-meta">D.R. Smith</p>
+      </a>
+      <a class="card" href="poems.html#exposure">
+        <p class="card-genre">Poem</p>
+        <h3>Exposure</h3>
+        <p class="card-excerpt">You ice and crack my body, a winter wind. Never have I been so proud to be broken.</p>
+        <p class="card-meta">D.R. Smith</p>
+      </a>
+      <a class="card" href="poems.html#inside">
+        <p class="card-genre">Poem</p>
+        <h3>Inside</h3>
+        <p class="card-excerpt">A hell of cells a cell of cells, bones, they hold like iron bars. Skin hangs on me like a suit: seemingly seamless but easily torn.</p>
+        <p class="card-meta">D.R. Smith</p>
+      </a>
+      <a class="card" href="poems.html#committed">
+        <p class="card-genre">Poem</p>
+        <h3>Committed</h3>
+        <p class="card-excerpt">The umbilical cord (the womb's leash) can not be brought to bedroom sheets without first stretching and snapping.</p>
+        <p class="card-meta">D.R. Smith</p>
+      </a>
+      <a class="card" href="poems.html#drink-in-the-sight">
+        <p class="card-genre">Poem</p>
+        <h3>Drink in the Sight</h3>
+        <p class="card-excerpt">Arenas and stadiums breaking the body to the beat of the crowd. They drink in the sight like wine.</p>
+        <p class="card-meta">D.R. Smith</p>
+      </a>
+    </div>
+  </section>
+
+  <footer>
+    <p class="footer-name">This Season Unchanging</p>
+    <p class="footer-tagline">The writing of David Robert Smith &nbsp;·&nbsp; 1975–2025</p>
+    <p class="footer-tagline" style="margin-top: 0.4rem;">&copy; 2026 daveswriting.com &nbsp;·&nbsp; All rights reserved</p>
+  </footer>
+
+</body>
+</html>

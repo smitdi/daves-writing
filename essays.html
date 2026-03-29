@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Essays — This Season Unchanging</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --ink: #2a1f14; --ink-light: #5c4a35; --ink-faint: #9c8870;
+      --parchment: #faf6ef; --parchment-dark: #f0e9db; --parchment-mid: #e8ddd0;
+      --accent: #8b3a2a; --rule: #d4c4b0;
+      --serif: 'Playfair Display', Georgia, serif;
+      --body: 'EB Garamond', Georgia, serif;
+    }
+    body { background: var(--parchment); color: var(--ink); font-family: var(--body); font-size: 18px; line-height: 1.75; }
+    nav { position: sticky; top: 0; z-index: 100; background: var(--parchment); border-bottom: 1px solid var(--rule); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 64px; }
+    .nav-logo { font-family: var(--serif); font-size: 1.1rem; font-style: italic; color: var(--ink); text-decoration: none; }
+    .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+    .nav-links a { font-size: 0.85rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-light); text-decoration: none; transition: color 0.2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--accent); }
+
+    .page-header { max-width: 860px; margin: 0 auto; padding: 5rem 2rem 3rem; border-bottom: 1px solid var(--rule); }
+    .page-eyebrow { font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 1rem; }
+    .page-header h1 { font-family: var(--serif); font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 400; color: var(--ink); margin-bottom: 1rem; }
+    .page-header p { font-size: 1rem; color: var(--ink-light); max-width: 480px; line-height: 1.8; }
+
+    .content { max-width: 720px; margin: 0 auto; padding: 4rem 2rem; }
+
+    .essay { padding-bottom: 5rem; margin-bottom: 5rem; border-bottom: 1px solid var(--rule); }
+    .essay:last-child { border-bottom: none; }
+
+    .essay-meta { font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 1.25rem; display: flex; gap: 1.5rem; }
+    .essay-meta span::before { content: '· '; }
+    .essay-meta span:first-child::before { content: ''; }
+
+    .essay h2 { font-family: var(--serif); font-size: clamp(1.5rem, 3vw, 2.2rem); font-weight: 400; line-height: 1.25; color: var(--ink); margin-bottom: 0.5rem; }
+    .essay-subtitle { font-family: var(--serif); font-style: italic; font-size: 1.05rem; color: var(--ink-faint); margin-bottom: 2rem; }
+
+    .essay-body { font-size: 1.05rem; color: var(--ink); line-height: 1.9; }
+    .essay-body p { margin-bottom: 1.6rem; }
+
+    .essay-body p:first-of-type::first-letter {
+      font-family: var(--serif); font-size: 3.8em; font-weight: 600;
+      float: left; line-height: 0.85; margin-right: 0.08em; margin-top: 0.08em; color: var(--accent);
+    }
+
+    .essay-body blockquote {
+      border-left: 2px solid var(--rule); padding-left: 1.5rem;
+      margin: 2rem 0; font-style: italic; color: var(--ink-light);
+    }
+
+    .essay-body h3 {
+      font-family: var(--serif); font-size: 1.2rem; font-weight: 400;
+      font-style: italic; color: var(--ink); margin: 2.5rem 0 1rem;
+    }
+
+    .essay-end { text-align: center; color: var(--rule); font-size: 1.2rem; letter-spacing: 0.5em; margin-top: 2.5rem; }
+
+    footer { border-top: 1px solid var(--rule); padding: 3rem 2rem; text-align: center; margin-top: 2rem; }
+    .footer-name { font-family: var(--serif); font-style: italic; font-size: 1.4rem; color: var(--ink); margin-bottom: 0.5rem; }
+    .footer-tagline { font-size: 0.85rem; color: var(--ink-faint); }
+
+    @media (max-width: 640px) {
+      nav { padding: 0 1rem; } .nav-links { gap: 1.5rem; }
+      .page-header, .content { padding-left: 1.5rem; padding-right: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-logo">This Season Unchanging</a>
+    <ul class="nav-links">
+      <li><a href="stories.html">Stories</a></li>
+      <li><a href="essays.html" class="active">Essays</a></li>
+      <li><a href="poems.html">Poems</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+  </nav>
+
+  <header class="page-header">
+    <p class="page-eyebrow">Essays</p>
+    <h1>Thinking out loud,<br>on the page</h1>
+    <p>Personal essays and occasional thoughts on the things that catch my attention — which is to say, nearly everything.</p>
+  </header>
+
+  <main class="content">
+
+
+    <article class="essay" id="chauvinism">
+      <div class="essay-meta">
+        <span>Essay</span>
+        <span>David Smith</span>
+      </div>
+      <h2>Chauvinism in Defense and Destruction</h2>
+      <div class="essay-body">
+        <p>During the recent Panamanian invasion, women were used to fight. At the present time, this is the exception rather than the rule. Now in the midst of Women's History Month, the question being debated is this: Should women fight in wars and/or invasions? Though the actual decision lies in the hands of the person in the army, I think that there is no reason why women can't fight as effectively as men.</p>
+
+        <p>The major argument against women soldiers is that they are not as physically equal to a man. This should not really matter, since most of the fighting is done with mechanical arsenal — guns, bombs, etc. — rather than hand to hand. If the person can hold a gun and effectively use it, then by all means they should fight.</p>
+
+        <p>Wars are perhaps one of our race's oldest and most disgraceful trademarks. These fights were primarily started by men, and in a bizarrely possessive sense, men seem to think that wars belong to them. Women live in this country, just as men do, so if there is a significant threat to the country, then both sexes should help to defend it.</p>
+
+        <p>Finally, women desire equality. If they truly desire to be in the same place as men, then, if they are physically able to, they should do the same things as their male counterparts.</p>
+
+        <p>Some men are chauvinists, and some women are still meant not to fight, but at one point we all have to fight, regardless of our gender.</p>
+      </div>
+      <p class="essay-end">· · ·</p>
+    </article>
+
+  </main>
+
+  <footer>
+    <p class="footer-name">This Season Unchanging</p>
+    <p class="footer-tagline">The writing of David Robert Smith &nbsp;·&nbsp; 1975–2025</p>
+    <p class="footer-tagline" style="margin-top: 0.4rem;">&copy; 2026 daveswriting.com &nbsp;·&nbsp; All rights reserved</p>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Short Stories — This Season Unchanging</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --ink: #2a1f14;
+      --ink-light: #5c4a35;
+      --ink-faint: #9c8870;
+      --parchment: #faf6ef;
+      --parchment-dark: #f0e9db;
+      --parchment-mid: #e8ddd0;
+      --accent: #8b3a2a;
+      --rule: #d4c4b0;
+      --serif: 'Playfair Display', Georgia, serif;
+      --body: 'EB Garamond', Georgia, serif;
+    }
+
+    body {
+      background: var(--parchment);
+      color: var(--ink);
+      font-family: var(--body);
+      font-size: 18px;
+      line-height: 1.75;
+    }
+
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: var(--parchment);
+      border-bottom: 1px solid var(--rule);
+      padding: 0 2rem;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 64px;
+    }
+
+    .nav-logo { font-family: var(--serif); font-size: 1.1rem; font-style: italic; color: var(--ink); text-decoration: none; }
+
+    .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+
+    .nav-links a {
+      font-size: 0.85rem; letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--ink-light); text-decoration: none; transition: color 0.2s;
+    }
+
+    .nav-links a:hover, .nav-links a.active { color: var(--accent); }
+
+    .page-header {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 5rem 2rem 3rem;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .page-eyebrow {
+      font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--ink-faint); margin-bottom: 1rem;
+    }
+
+    .page-header h1 {
+      font-family: var(--serif);
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 400;
+      color: var(--ink);
+      margin-bottom: 1rem;
+    }
+
+    .page-header p {
+      font-size: 1rem; color: var(--ink-light); max-width: 480px; line-height: 1.8;
+    }
+
+    .content {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 4rem 2rem;
+    }
+
+    .story {
+      padding-bottom: 4rem;
+      margin-bottom: 4rem;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .story:last-child { border-bottom: none; }
+
+    .story-meta {
+      font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase;
+      color: var(--ink-faint); margin-bottom: 1.25rem;
+      display: flex; gap: 1.5rem; align-items: center;
+    }
+
+    .story-meta span::before { content: '· '; }
+    .story-meta span:first-child::before { content: ''; }
+
+    .story h2 {
+      font-family: var(--serif);
+      font-size: clamp(1.5rem, 3vw, 2.2rem);
+      font-weight: 400;
+      line-height: 1.25;
+      color: var(--ink);
+      margin-bottom: 1.5rem;
+    }
+
+    .story h2 em { font-style: italic; color: var(--accent); }
+
+    .story-body {
+      font-size: 1.05rem;
+      color: var(--ink);
+      line-height: 1.9;
+    }
+
+    .story-body p { margin-bottom: 1.5rem; }
+
+    .story-body p:first-of-type::first-letter {
+      font-family: var(--serif);
+      font-size: 3.8em;
+      font-weight: 600;
+      float: left;
+      line-height: 0.85;
+      margin-right: 0.08em;
+      margin-top: 0.08em;
+      color: var(--accent);
+    }
+
+    .story-body blockquote {
+      border-left: 2px solid var(--rule);
+      padding-left: 1.5rem;
+      margin: 2rem 0;
+      font-style: italic;
+      color: var(--ink-light);
+    }
+
+    .story-end {
+      text-align: center;
+      color: var(--rule);
+      font-size: 1.2rem;
+      letter-spacing: 0.5em;
+      margin-top: 2.5rem;
+    }
+
+    footer {
+      border-top: 1px solid var(--rule);
+      padding: 3rem 2rem;
+      text-align: center;
+      margin-top: 2rem;
+    }
+
+    .footer-name { font-family: var(--serif); font-style: italic; font-size: 1.4rem; color: var(--ink); margin-bottom: 0.5rem; }
+    .footer-tagline { font-size: 0.85rem; color: var(--ink-faint); }
+
+    @media (max-width: 640px) {
+      nav { padding: 0 1rem; }
+      .nav-links { gap: 1.5rem; }
+      .page-header, .content { padding-left: 1.5rem; padding-right: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-logo">This Season Unchanging</a>
+    <ul class="nav-links">
+      <li><a href="stories.html" class="active">Stories</a></li>
+      <li><a href="essays.html">Essays</a></li>
+      <li><a href="poems.html">Poems</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+  </nav>
+
+  <header class="page-header">
+    <p class="page-eyebrow">Short Stories</p>
+    <h1>Fictional worlds,<br>true feelings</h1>
+    <p>Each of these stories is an attempt to find, through invention, something real.</p>
+  </header>
+
+  <main class="content">
+
+    <article class="story" id="rise">
+      <div class="story-meta">
+        <span>Short Story</span>
+        <span>David Robert Smith</span>
+      </div>
+      <h2>Rise</h2>
+      <div class="story-body">
+        <p>Awake: sickly conscious, shaking with caffeine, feeling that he would never sleep again. He searched for something to do: a book to read, a movie to watch, a person to talk to, but nothing, nothing, nothing but the pulse of a vein in his left eye throbbing in time with the digital clock, the red electric madman screaming "3 A.M.! 3 A.M.!"</p>
+
+        <p>In another three hours, the sun would take command of the sky and begin calling his followers to rise. Ryan twisted the hair on his ankles in numb frantiness. He didn't want the day. Some limbo, some shelter to save him, some haven in a timeless drawer that he could pack himself away in.</p>
+
+        <p>Cross-legged, chin to his chest, he wanted to fold into himself, fold and fold into non-existence, but he could not.</p>
+
+        <p>He was here in this reality that was making him ill, with hobgoblins running in his head, swimming in his veins. He felt that he was too much for his flesh (pale container).</p>
+
+        <p>He wished with vibrating reverberating hopefulness to join the sky, to feel the feathers of bird on his face, the taste of the moon in his mouth.</p>
+
+        <p>But he was here on the couch, in the house, in a room, in himself — he wanted out. Out!</p>
+
+        <p>To the door. He walked as if aware of his destiny, of the fact that surroundings did not matter, they could change and disappear but he'd still be there. Unsure of his physical existence, he reached for the knob to the door that led outside and was surprised to feel his flesh against the cold brass, surprised even more that he could turn it and open the womb.</p>
+
+        <p>Into the cold air, the large air! Its openness like that of a lover taking you into his arms. He stared at the night — its mysteries and superstitions replaced by a sense of love. The night understood him.</p>
+
+        <p>He relaxed and felt his flesh unravel and rise in the sky like an angel, like a soft trail of peyote smoke. Then his spirit, his glorious spirit, whose brilliance was dulled by this drape of skin that had covered it too long shattered into a million suns that shot upwards like rockets. They nestled comfortably among the stars. His glowing being, freed and free to be.</p>
+      </div>
+      <p class="story-end">· · ·</p>
+    </article>
+
+    <article class="story" id="what-is-known">
+      <div class="story-meta">
+        <span>Short Story</span>
+        <span>David Robert Smith</span>
+      </div>
+      <h2>What is Known</h2>
+      <div class="story-body">
+        <p>I had just closed my locker when I heard the cry, "There he is, get him!" I looked around, wondering who this "he" was, and why there were high school students carrying torches and rocks.</p>
+
+        <p>"He's the devil! He is in love with the Reaper!" It dawned on me then that I was the only one at the end of the hall.</p>
+
+        <p>"Oh, shit," I thought as I turned to go around the corner. "Stay calm, when I make the corner, I'll run," I told myself.</p>
+
+        <p>I was only a few steps from the corner when their pace quickened as my heart's own pace quickened. I turned and saw their growling faces, teeth exposed, torches in their hands.</p>
+
+        <p>"Salvation," I whispered as I rounded the corner.</p>
+
+        <p>At the rate I was going, I could've outrun Hermes. To my horror, though, from around the corner, at the end of the hall, came another group of madmen. Behind me, in front of me — caught like an animal, I awaited the hunter's slaughtering hands.</p>
+
+        <p>Before they could lay a claw on me, the leader (I could tell he was the ruler because he wore jewels on his baseball cap) said to me, "If I could read, I'd read you a list of what you've done — but I think I remember:</p>
+
+        <p>"You dare to not write of anything such as sports, love, happiness, or how wonderful it is to sink without a trace into the crowd..."</p>
+
+        <p>"That's not true! I've written of love and joy, you are all blind to see the meaning in my words."</p>
+
+        <p>One of the lovelies in the crowd yelled out, "Hey, why is he defending himself? What we say is, is what is."</p>
+
+        <p>I love the logic of the mindless.</p>
+
+        <p>Another cried, "I heard that he planned to stab himself in the chest... uh... 30, no... 40 times at the next rally!"</p>
+
+        <p>And alas, it got to the point ridiculous when one screamed, "He has a black altar in his bedroom!"</p>
+
+        <p>The king, the captain of this ship of fools, turned to me and said, "You see, we never even had to talk to you, or know anything about you to come up with our conclusions... Down to the lobby with him!"</p>
+
+        <p>So, bound and gagged went I to the gallows, or lobby, as it was. To my surprise, I saw that they'd been expecting me, having set up a large pole to tie me to, surrounded by small bits of kindling and the ripped up pages of volumes 1–7 of the Book of Knowledge.</p>
+
+        <p>They tied me to the pole. "How happy are they?" I wondered. "Which has more than a touch of the morbid, my poetry and dress, or the fact that they take such an angry interest in my existence?"</p>
+
+        <p>I looked at the wall and could have sworn that there was a sign which read "Welcome to Salem High School."</p>
+
+        <p>The ruler sent one of his lackeys forth to set me aflame — I think his name was #12. He could not figure out how to spark the match to flame, though. I guess that would come to them in the next level of evolution.</p>
+      </div>
+      <p class="story-end">· · ·</p>
+    </article>
+
+
+
+  </main>
+
+  <footer>
+    <p class="footer-name">This Season Unchanging</p>
+    <p class="footer-tagline">The writing of David Robert Smith &nbsp;·&nbsp; 1975–2025</p>
+    <p class="footer-tagline" style="margin-top: 0.4rem;">&copy; 2026 daveswriting.com &nbsp;·&nbsp; All rights reserved</p>
+  </footer>
+
+</body>
+</html>
